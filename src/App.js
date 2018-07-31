@@ -118,7 +118,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.renderSelectState()}
-        {this.renderSelectRevenue()}
+        {/* {this.renderSelectRevenue()} */}
         <div>
           {bubbleChartData && <BubbleChart bubbleChartData={bubbleChartData} />}
         </div>
