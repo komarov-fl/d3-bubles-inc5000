@@ -58,9 +58,10 @@ export default class BubbleChart extends Component {
 
     this.tick = d3.forceSimulation()
       .nodes(bubbleChartData)
-      .force('xTowardsTheCenter', d3.forceX(0).strength(0.01))
-      .force('yTowardsTheCenter', d3.forceY(100).strength(0.01))
-      .force('collide', d3.forceCollide(d => radiusScale(d.value)))
+      .force('x', d3.forceX(0).strength(0.01))
+      .force('y', d3.forceY(100).strength(0.01))
+      .force('collision', d3.forceCollide(d => radiusScale(d.value)))
+      .force('test', d3.forceManyBody())
       .on('tick', () => this.setState({ bubbleChartData }));
   }
 
